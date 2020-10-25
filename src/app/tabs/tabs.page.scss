@@ -1,1 +1,89 @@
+fieldset, ion-tab-button {
+    display: flex;
+    // flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    -webkit-transition: all 0.4s 0s ease-in-out;
+    -moz-transition: all 0.4s 0s ease-in-out;
+    -o-transition: all 0.4s 0s ease-in-out;
+    transition: all 0.4s 0s ease-in-out;
+}
+
+ion-label {
+    display: none;
+    -webkit-transition: all 0.4s 0s ease-in-out;
+    -moz-transition: all 0.4s 0s ease-in-out;
+    -o-transition: all 0.4s 0s ease-in-out;
+    transition: all 0.4s 0s ease-in-out;
+    font-size: 14px;
+}
+
+ion-icon {
+    font-size: 200%;
+}
+
+fieldset {
+    box-sizing: content-box;
+    border: none;
+}
+
+
+.explore-field {
+    width: 50px;
+    height: 55px;
+    background: #5598ff;
+    border-radius: 100%;
+    flex-direction: row;
+    z-index: 9999;
+    // box-shadow: rgba(245, 245, 245) 0px 5px 25px 0px;
+    // box-shadow: rgb(200, 200, 200) 0px 5px 15px 0px;
+    -webkit-box-shadow: -2px 5px 15px 0px rgba(200, 200, 200, 1);
+   -moz-box-shadow: -2px 5px 15px 0px rgba(200, 200, 200, 1);
+    box-shadow: -2px 5px 15px 0px rgba(200, 200, 200, 1);
+    ion-icon {
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+    }
+}
+
+
+ion-tab-bar {
+    height: 90px;
+}
+
+
+.active-tab {      
+    position: relative;
+    &:before {
+        position: absolute;
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background: #5598ff;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // left:0;
+        // right:0;
+        // margin-left:auto;
+        // margin-right:auto;
+    }
+    ion-icon {
+        animation: bounce;
+        animation-duration: 1s;
+        position: relative;
+     
+    }
+    .explore-field ion-icon {
+        // animation: bounceOutUp; /* referring directly to the animation's @keyframe declaration */
+        animation: slideOutUp;
+        animation-duration: 1s; /* don't forget to set a duration! */
+    }
+} 
+
+
+
+
 

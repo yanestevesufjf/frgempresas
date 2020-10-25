@@ -1,20 +1,44 @@
 <ion-tabs>
+  <!--Home | Explore | Classificados | Favoritos | Perfil-->
 
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1">
-      <ion-icon name="triangle"></ion-icon>
-      <ion-label>Tab 1</ion-label>
+  <ion-tab-bar mode="md" slot="bottom">
+
+    <ion-tab-button id="home-tab" [ngClass]="{'active-tab': url === '/tabs/tab1'}" tab="tab1">
+      <fieldset>
+        <ion-icon name="book-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </fieldset>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab2">
-      <ion-icon name="ellipse"></ion-icon>
-      <ion-label>Tab 2</ion-label>
+    <ion-tab-button id="shop-tab" [ngClass]="{'active-tab': url === '/tabs/tab5'}" tab="tab5">
+      <fieldset>
+        <ion-icon name="bag-outline"></ion-icon>
+        <ion-label>Shop</ion-label>
+      </fieldset>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab3">
-      <ion-icon name="square"></ion-icon>
-      <ion-label>Tab 3</ion-label>
+    <ion-tab-button id="explore-tab" [ngClass]="{'active-tab': url === '/tabs/tab2'}" tab="tab2">
+      <fieldset class="explore-field">
+        <ion-icon name="rocket-outline"></ion-icon>
+        <ion-label style="display: none !important;">Explore</ion-label>
+      </fieldset>
     </ion-tab-button>
+
+    <ion-tab-button id="favorite-tab" [ngClass]="{'active-tab': url === '/tabs/tab3'}" tab="tab3">
+      <fieldset>
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-label>Favoritos</ion-label>
+      </fieldset>
+    </ion-tab-button>
+
+    
+    <ion-tab-button id="perfil-tab" [ngClass]="{'active-tab': url === '/tabs/tab4'}" tab="tab4">
+      <fieldset>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </fieldset>
+    </ion-tab-button>
+
   </ion-tab-bar>
 
 </ion-tabs>
