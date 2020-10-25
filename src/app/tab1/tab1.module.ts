@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { LongPressModule } from 'ionic-long-press';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
-    CarouselModule
+    CarouselModule,
+    LongPressModule
   ],
   declarations: [Tab1Page]
 })

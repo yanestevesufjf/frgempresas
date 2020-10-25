@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -14,10 +14,14 @@ import { BottomSheetComponent, BottomSheetModule } from "ionic-custom-bottom-she
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreService } from './services/core.service';
+import { SearchPipe } from './pipes/search.pipe';
+
+import { IonicGestureConfig } from './utils/IonicGestureConfig'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchPipe
   ],
   entryComponents: [
     BottomSheetComponent
@@ -32,11 +36,13 @@ import { CoreService } from './services/core.service';
     AppRoutingModule,
     BottomSheetModule,
     CarouselModule,
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide: HAMMER_GESTURE_CONFIG, useClass: IonicGestureConfig},
     CoreService
   ],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { ComponentRef, Injectable } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { StoryPreviewPage } from '../story-preview/story-preview.page';
 import { NotificacoesPage } from '../notificacoes/notificacoes.page';
 import { WebService } from './web.service';
 
@@ -33,13 +34,33 @@ export class CoreService {
   }
 
 
-  public async abreModal(screen) {
+  public async abreModal(screen, data?) {
     console.log('core::abreModal::' + screen);
+    screen = this.returnComponent(screen);
+
+    if (!screen) {
+      return false;
+    }
+
     const modal = await this.modalController.create({
-      component: NotificacoesPage,
-      cssClass: 'my-custom-class'
+      component: screen,
+      cssClass: 'my-custom-class', 
+      componentProps: {
+        data: data
+      }
     });
     return await modal.present();
+  }
+
+  returnComponent(string) {
+    switch (string) {
+      case 'notificacoes':
+        return NotificacoesPage;
+      case 'story-preview':
+        return StoryPreviewPage;
+      default:
+        return false;
+    }
   }
 
   public async fechaModal() {

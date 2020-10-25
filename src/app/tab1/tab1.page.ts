@@ -17,7 +17,7 @@ export class Tab1Page {
     pullDrag: true,
     dots: false,
     navSpeed: 700,
-    margin: 210,//30//270 
+    margin: 240,//210
     autoWidth: true,
     responsive: {
       0: {
@@ -65,5 +65,34 @@ export class Tab1Page {
 
   constructor(public core: CoreService) {}
 
+  ionViewWillEnter() {
+    console.log('did enter')
+  }
+
+  openLivePreview(l) {
+    console.log(l);
+  }
+
+  setMyPicture(foto) {
+    // let styles = {
+    //   'background-image': 'url(' + foto + ')'
+    // };
+    // if (foto) {
+      let styles = {
+        'background-image': 'url(' + foto + ')'
+      };
+    // }
+  
+    return styles;
+  }
  
+  pressed(){
+    console.log('pressed')
+  }
+  active(){
+    console.log('active')
+  }released()
+  {
+    console.log('released')
+  }
 }

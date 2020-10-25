@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{pageName}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense" [translucent]="true" class="ion-no-border">
+    <ion-toolbar class="font">
+      <ion-title size="large">{{pageName}}</ion-title>
+    </ion-toolbar>
+    <ion-toolbar style="margin-top: 10px;" collapse="condense" [translucent]="true" class="ion-no-border">
+      <ion-searchbar debounce="500" placeholder="Buscar lugares"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+
+</ion-content>

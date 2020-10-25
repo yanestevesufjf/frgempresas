@@ -1,5 +1,7 @@
 {
   "name": "empresasfrg",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

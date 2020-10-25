@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Explore
+      Empresas FRG
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +11,7 @@
     <ion-toolbar class="font">
       <ion-title size="large">Explore</ion-title>
       <ion-buttons slot="end">
-        <ion-button color="primary" (click)="core.abreModal('NotificacoesPage')">
+        <ion-button color="primary" (click)="core.abreModal('notificacoes')">
           <ion-icon slot="icon-only" name="notifications-outline"></ion-icon> <!-- ios="ellipsis-horizontal" -->
         </ion-button>
       </ion-buttons>
@@ -44,9 +44,9 @@
           <owl-carousel-o [options]="optionsRecomendados">
             <ng-container *ngFor="let l of core.destinosPopulares">
               <ng-template class="slide" carouselSlide>
-                <div class="card ion-activatable ripple-parent">
+                <div ion-long-press [interval]="400" (pressed)="pressed()" (longPressed)="active()" (pressEnded)="released()" class="card ion-activatable ripple-parent" [ngStyle]="setMyPicture(l.foto)">
+                  <div class="bg-layer"></div>
                   <ion-ripple-effect></ion-ripple-effect>
-
                   <span class="owl-tag">{{l.categoria}}</span>
                   <div class="owl-base">
                     <span class="owl-name">{{l.nome}}</span>
@@ -80,7 +80,7 @@
           <owl-carousel-o [options]="optionsTop">
             <ng-container *ngFor="let l of core.topDestinos">
               <ng-template class="slide" carouselSlide>
-                <div class="item">
+                <div class="item" (click)="core.abreModal('story-preview', l)">
                   <div class="destination-circle">
                     <div class="img"></div>
                   </div>

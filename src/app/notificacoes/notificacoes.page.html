@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar style="padding-top: 30px !important;">
+  <ion-toolbar style="margin-top: 30px !important;">
     <ion-buttons slot="start">
-      <ion-button (click)="core.fechaModal()">  
+      <ion-button color="dark" (click)="core.fechaModal()">  
         <ion-icon name="chevron-back-outline"></ion-icon>        
         <!-- <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>          ios="ellipsis-horizontal" -->
       </ion-button>
@@ -23,7 +23,15 @@
     <ion-toolbar class="font">
       <ion-title size="large">Notificações</ion-title>
     </ion-toolbar>
-
   </ion-header>
+
+  <!-- <ion-grid>
+    <ion-row size="12">
+      
+    </ion-row>
+  </ion-grid> -->
+  <div class="section sem-notificacoes">
+    <ion-text>Você não tem notificações no momento.</ion-text>
+  </div>
 
 </ion-content>
