@@ -1,17 +1,114 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Explore
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+  <ion-header collapse="condense" [translucent]="true" class="ion-no-border">
+    <ion-toolbar class="font">
+      <ion-title size="large">Explore</ion-title>
+      <ion-buttons slot="end">
+        <ion-button color="primary" (click)="core.abreModal('NotificacoesPage')">
+          <ion-icon slot="icon-only" name="notifications-outline"></ion-icon> <!-- ios="ellipsis-horizontal" -->
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar style="margin-top: 10px;" collapse="condense" [translucent]="true" class="ion-no-border">
+      <ion-searchbar debounce="500" placeholder="Buscar lugares"></ion-searchbar>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+  <div id="recomendados" class="section font">
+    <ion-grid>
+      <ion-row size="12">
+        <ion-col size="8">
+          <ion-text class="section-title">
+            Destinos populares
+            <!-- Trending destinations -->
+          </ion-text>
+        </ion-col>
+        <ion-col size="4">
+          <ion-text class="small-text"
+            style="position: absolute; right: 0; bottom: 5px !important;" color="primary">Ver
+            todos
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <div class="owl-section owl-recomendados">
+          <!-- active-card-->
+          <owl-carousel-o [options]="optionsRecomendados">
+            <ng-container *ngFor="let l of core.destinosPopulares">
+              <ng-template class="slide" carouselSlide>
+                <div class="card ion-activatable ripple-parent">
+                  <ion-ripple-effect></ion-ripple-effect>
+
+                  <span class="owl-tag">{{l.categoria}}</span>
+                  <div class="owl-base">
+                    <span class="owl-name">{{l.nome}}</span>
+                  </div>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div id="top-10" class="section font">
+    <ion-grid>
+      <ion-row size="12">
+        <ion-col size="12">
+          <ion-text class="section-title">
+            Top 10 destinos
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row size="12">
+        <div class="owl-section owl-top-destinations">
+          <!-- <div class="item">
+            <div class="destination-circle">
+              <div class="img"></div>
+            </div>
+            <span class="destination-name">Brownie do Rapha</span>
+          </div> -->
+          <owl-carousel-o [options]="optionsTop">
+            <ng-container *ngFor="let l of core.topDestinos">
+              <ng-template class="slide" carouselSlide>
+                <div class="item">
+                  <div class="destination-circle">
+                    <div class="img"></div>
+                  </div>
+                  <span class="destination-name">{{l.nome}}</span>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div id="categorias" class="section font">
+    <ion-grid>
+      <ion-row size="12">
+        <ion-col size="12">
+          <ion-text class="section-title">
+            Categorias
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row size="12">
+        <ion-col size="12">
+          <div style="width: 1px; height: 200px;">
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

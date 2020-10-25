@@ -1,0 +1,18 @@
+{
+    "notificacoes": [
+        {
+            "categoria": "cupom",
+            "titulo": "Parabéns! Você ganhou um cupom para categoria bares",
+            "timestamp": "24/10",
+            "validade": "7 dias",
+            "lida": false
+        },
+        {
+            "categoria": "promoção",
+            "titulo": "Ta rolando promoção no Brownie do Luis",
+            "timestamp": "23/10",
+            "validade": "4 dias",
+            "lida": false
+        }
+    ]
+}

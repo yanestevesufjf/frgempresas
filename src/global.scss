@@ -10,6 +10,10 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -24,3 +28,147 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// h1, h2, h3, h4, h5, h6, p {
+//     color: #1c1c1c;
+// }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.font {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.section {
+    padding: 10px !important;
+    padding-bottom: 5px;
+}
+
+.section-title {
+    display: block;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 500;
+    letter-spacing: .3px;
+    // color: #1c1c1c;
+}
+
+.small-text {
+    font-size: 13px;
+}
+
+.text-right {
+    float: right;
+}
+
+.owl-section {
+    margin: 15px 0;
+    margin-bottom: 0;
+}
+
+.owl-recomendados {
+    // margin: 15px 0;
+    .card {
+        width: 190px;
+        height: calc(190px * 1.25);
+        border-radius: 12px;
+        background: rgb(226, 226, 226);
+        position: relative;
+        z-index: 7;
+        padding: 10px;
+    }
+
+    .active-card {
+        margin-left: 30px;
+        // display: none; 
+        &:before, &:after {
+            position: absolute;
+            content: '';
+            background: #000000;
+            border-top-left-radius: 14px;
+            border-bottom-left-radius: 14px;
+        }
+        &:before {
+            height: calc(190px * 1.25 * .80);
+            z-index: 2 !important;
+            width: 12px;
+            left: -12px;
+            top: calc(190px * 1.25 * .1);
+            opacity: .4;
+        }
+        &:after {
+            height: calc(190px * 1.25 * .6);
+            width: 24px;
+            left: -24px;
+            top: calc(190px * 1.25 * .2);
+            opacity: .2;
+        }
+    }
+}
+
+.owl-tag {
+    font-size: 12px;
+    padding: 4px 8px;
+    color: #2c2c2c;
+    // color: #f7f7f7;
+    // background: rgba(255, 255, 255, .2);
+    background: rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    // border-radius: 8px;
+}
+
+.owl-base {
+    position: absolute;
+    bottom: 10px;
+}
+
+.owl-name {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .2px;
+    color: #2c2c2c;
+    // color: white;
+}
+
+.owl-top-destinations {
+    .item {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 120px;
+        max-width: 120px;
+
+        .destination-circle {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #5598ff;
+            position: relative;
+            //primary: #428cff
+            // shade: #3a7be0 
+            // tint:  #5598ff
+            padding: 1px;
+            .img {
+                background: rgb(251, 251, 251);
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        .destination-name {
+            max-width: 120px;
+            margin-top: 12px;
+            font-weight: 400;
+            color: #2c2c2c;
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            line-height: 17px;
+        }
+    }
+}

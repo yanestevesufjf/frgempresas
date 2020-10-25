@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 30px !important;">
+    <ion-buttons slot="start">
+      <ion-button (click)="core.fechaModal()">  
+        <ion-icon name="chevron-back-outline"></ion-icon>        
+        <!-- <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>          ios="ellipsis-horizontal" -->
+      </ion-button>
+      <!-- <ion-back-button></ion-back-button> -->
+    </ion-buttons>
+    <ion-title>
+      Notificações
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="clear">          
+        Limpar      <!-- ios="ellipsis-horizontal" -->
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense" [translucent]="true" class="ion-no-border">
+    <ion-toolbar class="font">
+      <ion-title size="large">Notificações</ion-title>
+    </ion-toolbar>
+
+  </ion-header>
+
+</ion-content>
