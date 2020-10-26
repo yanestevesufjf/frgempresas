@@ -239,3 +239,20 @@
     background: rgb(0, 0, 0);
     opacity: .3;
 }
+
+.unreadNotifications {
+    position: relative;
+    &:before {
+        z-index: 9999;
+        position: absolute;
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        background: #5598ff;
+        top: 10px;
+        right: 6px;
+        transform: translate(-50%, -50%);
+    }
+
+}

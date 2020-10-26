@@ -11,7 +11,7 @@
     <ion-toolbar class="font">
       <ion-title size="large">Explore</ion-title>
       <ion-buttons slot="end">
-        <ion-button color="primary" (click)="core.abreModal('notificacoes')">
+        <ion-button [class.unreadNotifications]="core.notificacoes.length > 0" color="dark" (click)="core.abreModal('notificacoes')">
           <ion-icon slot="icon-only" name="notifications-outline"></ion-icon> <!-- ios="ellipsis-horizontal" -->
         </ion-button>
       </ion-buttons>

@@ -29,8 +29,11 @@ export class CoreService {
 
     this.web.get('notificacoes').then((data: any) => {
       this.notificacoes = [];
-      this.notificacoes = data.notificacoes
+      this.notificacoes = data.notificacoes;
+      console.log(this.notificacoes.length)
     });
+
+    
   }
 
 
