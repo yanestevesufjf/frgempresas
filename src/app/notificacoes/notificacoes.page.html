@@ -25,13 +25,26 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- <ion-grid>
-    <ion-row size="12">
-      
-    </ion-row>
-  </ion-grid> -->
   <div class="section sem-notificacoes">
-    <ion-text>Você não tem notificações no momento.</ion-text>
+    <!-- <ion-text>Você não tem notificações no momento.</ion-text> -->
+    <ion-list>
+      <ion-item *ngFor="let n of core.notificacoes">
+        <ion-label>{{n.titulo}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Notificacao 1</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Notificacao 2</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Notificacao 3</ion-label>
+      </ion-item>
+
+    </ion-list>
   </div>
 
 </ion-content>
